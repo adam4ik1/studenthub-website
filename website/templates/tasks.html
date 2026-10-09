@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Tasks | StudentHub{% endblock %}
+{% block content %}
+<section class="page-heading"><p class="eyebrow">STUDENT PLANNER</p><h1>My tasks</h1><p class="lead">Add assignments and mark them complete when you're done.</p></section>
+<section class="panel">
+  <form id="task-form" class="inline-form">
+    <label class="sr-only" for="task-input">Task name</label>
+    <input id="task-input" name="task" placeholder="e.g. Finish maths homework" required>
+    <button class="button" type="submit">Add task</button>
+  </form>
+  <label class="search-label" for="task-search">Search tasks</label>
+  <input id="task-search" placeholder="Type to filter tasks">
+  <ul id="task-list" class="task-list">
+    <li><label><input type="checkbox"> Read computer science chapter</label></li>
+    <li><label><input type="checkbox"> Prepare physics notes</label></li>
+  </ul>
+  <p id="task-message" class="message" role="status" aria-live="polite"></p>
+</section>
+{% endblock %}

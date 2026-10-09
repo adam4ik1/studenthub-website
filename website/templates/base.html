@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}StudentHub{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/">StudentHub</a>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/tasks">Tasks</a>
+      <a href="/register">Register</a>
+      {% if bug_mode %}<a href="/broken">Resources</a>{% else %}<a href="/resources">Resources</a>{% endif %}
+    </nav>
+  </header>
+  <main class="container">
+    {% block content %}{% endblock %}
+  </main>
+  <footer>StudentHub · Organise your student life</footer>
+  <script>window.STUDENTHUB_BUG_MODE = {{ 'true' if bug_mode else 'false' }};</script>
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

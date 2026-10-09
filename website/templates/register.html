@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Register | StudentHub{% endblock %}
+{% block content %}
+<section class="page-heading"><p class="eyebrow">JOIN THE COMMUNITY</p><h1>Create your account</h1><p class="lead">Use your student email to get started.</p></section>
+<section class="panel form-panel">
+  <form id="register-form">
+    <label for="full-name">Full name</label>
+    <input id="full-name" name="name" placeholder="Alex Student" required>
+    <label for="email">Email address</label>
+    {% if bug_mode %}
+      <input id="email" name="email" type="text" placeholder="you@university.edu" required>
+    {% else %}
+      <input id="email" name="email" type="email" placeholder="you@university.edu" required>
+    {% endif %}
+    <button class="button" type="submit">Create account</button>
+    <p id="register-message" class="message" role="status" aria-live="polite"></p>
+  </form>
+</section>
+{% endblock %}
